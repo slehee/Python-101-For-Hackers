@@ -3,7 +3,7 @@
 ## Some python projects for ethical hacking and testing from TCM courses
 
 
-* Prerequisites for the ssh brute forcing
+* Prerequisites for the `ssh brute forcing`
 
  A wordlist to use you can download similar lists from: 
 
