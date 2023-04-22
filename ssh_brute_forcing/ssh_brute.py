@@ -3,7 +3,7 @@ import paramiko
 import time
 
 host = "192.168.56.4"
-username = "slehee"
+username = "user"
 attempts= 0
 
 with open ("ssh-common-passwords.txt", "r") as password_list:
