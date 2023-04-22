@@ -3,7 +3,7 @@
 ## Some python projects for ethical hacking and testing from TCM courses
 
 
-* Prerequisites for the `ssh_brute_orcing`
+* Prerequisites for the `ssh_brute_forcing`
 
  A wordlist to use you can download similar lists from: 
 
