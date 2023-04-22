@@ -1,5 +1,10 @@
 # Python-101-For-Hackers
 
+## Disclaimer
+Scripts developed with the intension of educational purpose only.
+  
+> Learn - Hack - Secure :upside_down_face:	
+
 ## Some python projects for ethical hacking and testing from TCM courses
 
 
