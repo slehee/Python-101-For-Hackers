@@ -1,6 +1,8 @@
 from flask import Flask, render_template, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
+from flask import request
+import sqlite3
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
@@ -22,12 +24,20 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        user = User.query.filter_by(username=username, password=password).first()
+
+        # Vulnerable login function using raw SQL queries
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT * FROM user WHERE username='{username}' AND password='{password}'")
+        user = cursor.fetchone()
+
         if user:
-            login_user(user)
+            user_obj = User(id=user[0], username=user[1], password=user[2])
+            login_user(user_obj)
             return redirect(url_for('secure_page'))
         else:
             return "Incorrect username or password."
+
     return render_template('login.html')
 
 @app.route('/register', methods=['GET', 'POST'])
