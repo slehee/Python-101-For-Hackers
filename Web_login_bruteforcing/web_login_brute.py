@@ -4,7 +4,7 @@ import sys
 target ="http://127.0.0.1:5000/login"
 usernames =["admin","bob","user","test"]
 passwords = "passwords.txt"
-needle = "Welcome to" ## (To check waht is in the r.content response)
+needle = "Welcome to" ## (To check what is in the r.content response)
 
 for username in usernames:
     with open (passwords, "r") as passwords_list:
