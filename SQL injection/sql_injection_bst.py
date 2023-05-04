@@ -79,14 +79,8 @@ while True:
     try:
         user_id = input (">> Enter a user ID to extract the password hash ")
         user_password_length = 32
-        #if not invalid_user(user_id):
-        #    user_password_length = password_length(user_id)
-        #    print ("\t [-] User {} hash length: {}".format(user_id, user_password_length))
-        #    total_queries_taken()
         print("\t[-] User {} hash: {}".format(user_id, extract_hash_bst(charset, int(user_id), user_password_length)))
         total_queries_taken()
         print ("\t[-] User {} flag is: {}".format(user_id,get_flag(password)))
-        #else:
-        #print ("\t[X] User {} does not exits!".format(user_id))
     except KeyboardInterrupt:
         break
